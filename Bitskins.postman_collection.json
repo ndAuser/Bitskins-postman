@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "300f6719-f69b-4766-9cda-12291d6820c9",
+		"name": "Bitskins",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30684409"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-apikey",
+								"value": "{{Api key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Base bitskins api adress}}/account/profile/me",
+							"host": [
+								"{{Base bitskins api adress}}"
+							],
+							"path": [
+								"account",
+								"profile",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Balance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-apikey",
+								"value": "{{Api key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Base bitskins api adress}}/account/profile/balance",
+							"host": [
+								"{{Base bitskins api adress}}"
+							],
+							"path": [
+								"account",
+								"profile",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Market",
+			"item": [
+				{
+					"name": "MyCS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-apikey",
+								"value": "{{Api key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base bitskins api adress}}/market/search/mine/730",
+							"host": [
+								"{{Base bitskins api adress}}"
+							],
+							"path": [
+								"market",
+								"search",
+								"mine",
+								"730"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pricing",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-apikey",
+								"value": "{{Api key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app_id\": 730,\r\n  \"skin_id\": 4194997\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base bitskins api adress}}/market/pricing/list",
+							"host": [
+								"{{Base bitskins api adress}}"
+							],
+							"path": [
+								"market",
+								"pricing",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pricing Summary",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-apikey",
+								"value": "{{Api key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app_id\": 730,\r\n  \"skin_id\": 1,\r\n  \"date_from\": \"2023-01-01\",\r\n  \"date_to\": \"2023-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base bitskins api adress}}/market/pricing/summary",
+							"host": [
+								"{{Base bitskins api adress}}"
+							],
+							"path": [
+								"market",
+								"pricing",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Item search (id)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-apikey",
+								"value": "{{Api key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app_id\": 730,\r\n  \"id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base bitskins api adress}}/market/search/get",
+							"host": [
+								"{{Base bitskins api adress}}"
+							],
+							"path": [
+								"market",
+								"search",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Item search (skin_name)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-apikey",
+								"value": "{{Api key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"where\": {\r\n    \"app_id\": 730,\r\n    \"skin_name\": \"%glock\"\r\n  },\r\n  \"limit\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base bitskins api adress}}/market/search/skin_name",
+							"host": [
+								"{{Base bitskins api adress}}"
+							],
+							"path": [
+								"market",
+								"search",
+								"skin_name"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Config",
+			"item": [
+				{
+					"name": "Fee_plan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-apikey",
+								"value": "{{Api key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Base bitskins api adress}}/config/fee_plan/list",
+							"host": [
+								"{{Base bitskins api adress}}"
+							],
+							"path": [
+								"config",
+								"fee_plan",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-apikey",
+								"value": "{{Api key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Base bitskins api adress}}/config/status/get",
+							"host": [
+								"{{Base bitskins api adress}}"
+							],
+							"path": [
+								"config",
+								"status",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
